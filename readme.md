@@ -17,8 +17,8 @@ React Firebase 2023
    git remote add origin https://github.com/edycoleee/react-firebase.git
    git push -u origin master
 
-   git branch -M main
-   git push -u origin main
+   git branch -M mockup
+   git push -u origin mockup
 
 3. Mockup data
 
