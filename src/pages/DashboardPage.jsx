@@ -1,3 +1,4 @@
+//src/pages/DashboardPage.jsx
 import { useContext } from "react";
 import { GlobalContext } from "./GlobalContext";
 
