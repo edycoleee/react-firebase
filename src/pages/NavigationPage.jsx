@@ -14,6 +14,7 @@ const Navigation = () => {
       <Link to="/dashboard">Dashboard</Link> {" | "}
       <Link to="/users">User</Link> {" | "}
       <Link to="/admin">Admin</Link> {" | "}
+      <Link to="/logout">Logout</Link> {" | "}
     </nav>
   );
 };

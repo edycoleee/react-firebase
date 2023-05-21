@@ -10,6 +10,8 @@ import LoginPage from './pages/LoginPage';
 import Navigation from './pages/NavigationPage';
 import { useContext } from 'react';
 import { GlobalContext } from './pages/GlobalContext';
+import Logout from './pages/Logout';
+import DataPasien from './pages/data_pasien/DataPasien';
 
 function App() {
   const { user } = useContext(GlobalContext)
@@ -25,6 +27,8 @@ function App() {
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="users" element={<UsersPage />} />
           {/* <Route path="admin" element={<AdminPage />} /> */}
+          <Route path="logout" element={<Logout />} />
+          <Route path="dtpasien" element={<DataPasien />} />
         </Route>
         <Route
           path="admin"
@@ -34,6 +38,7 @@ function App() {
               isAllowed={!!user && user.roles.includes('admin')}
             >
               <AdminPage />
+
             </ProtectedRoute>
           }
         />
