@@ -1,51 +1,45 @@
-import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
-import { tbPasien } from "../../datadummy/dbPasien.js"
+//src/pages/data_pasien/ListData.jsx
+//import { tbPasien } from "../../datadummy/dbPasien.js"
+import { useContext } from "react"
+import { DtPasienContext } from "./ContextDataPasien"
 
 function ListData() {
+  const { dtPasien } = useContext(DtPasienContext)
   return (
     <div>
-      <TableContainer>
-        <Table aria-label="a dense table">
-          <TableHead>
-            <TableRow>
-              <TableCell>ACTION</TableCell>
-              <TableCell>id</TableCell>
-              <TableCell>Nama</TableCell>
-              <TableCell>Alamat</TableCell>
-              <TableCell>Telepon</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {tbPasien.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>
-                  <Box display="flex">
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                    >
-                      EDT
-                    </Button>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                    >
-                      DETAIL
-                    </Button>
-                  </Box>
-                </TableCell>
-                <TableCell component="th" scope="row">
-                  {row.id}
-                </TableCell>
-                <TableCell>{row.namapasien}</TableCell>
-                <TableCell>{row.alamat}</TableCell>
-                <TableCell>{row.telepon}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-
+      <table>
+        <thead>
+          <tr>
+            <th>ACTION</th>
+            <th>id</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Telepon</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dtPasien.map((row) => (
+            <tr key={row.id}>
+              <td>
+                <span style={{ display: 'flex', gap: 4 }}>
+                  <button>
+                    EDT
+                  </button>
+                  <button>
+                    DETAIL
+                  </button>
+                </span>
+              </td>
+              <td>
+                {row.id}
+              </td>
+              <td>{row.namapasien}</td>
+              <td>{row.alamat}</td>
+              <td>{row.telepon}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
